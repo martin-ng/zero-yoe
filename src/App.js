@@ -1,15 +1,11 @@
 import React from "react";
 import "./App.css";
-import { Job } from "./components/index";
-
-// function App() {
-//   return <div className="App"></div>;
-// }
+import { Jobs } from "./components/index";
 
 const App = () => {
   return (
     <div>
-      <Job />
+      <Jobs />
     </div>
   );
 };

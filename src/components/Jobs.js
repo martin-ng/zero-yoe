@@ -1,10 +1,11 @@
 import React from "react";
-// import "./App.css";
+import "./components.css";
+import { Job } from "./index";
 
 export default function Jobs() {
   return (
-    <div>
-      <h1>Entry Level Software Engineering Jobs</h1>
+    <div className="single-job">
+      <Job />
     </div>
   );
 }

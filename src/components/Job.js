@@ -1,11 +1,13 @@
 import React from "react";
 import "./components.css";
-// import { Jobs } from "./index";
 
-export default function Job() {
+export default function Job(prop) {
+  const { title, company } = prop.data;
+
   return (
-    <div>
-      <h1>Entry Level Software Engineering Jobs</h1>
+    <div className="job">
+      <p>{title}</p>
+      <p>{company}</p>
     </div>
   );
 }

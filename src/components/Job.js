@@ -1,10 +1,10 @@
-import React from "./node_modules/react";
-import "./App.css";
+import React from "react";
+import { Jobs } from "./index";
 
-function Job() {
+export default function Job() {
   return (
     <div>
-      <p>test</p>
+      <Jobs />
     </div>
   );
 }

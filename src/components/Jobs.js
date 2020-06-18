@@ -1,7 +1,7 @@
-import React from "./node_modules/react";
-import "./App.css";
+import React from "react";
+// import "./App.css";
 
-function Jobs() {
+export default function Jobs() {
   return (
     <div>
       <h1>Entry Level Software Engineering Jobs</h1>

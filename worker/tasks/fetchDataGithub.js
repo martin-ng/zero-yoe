@@ -11,15 +11,14 @@ async function fetchFromGithub() {
   while (resultCount > 0) {
     const data = await fetch(`${baseURL}?page=${currentPage}`);
     const jobs = await data.json();
-    allJobs.push(jobs);
+    allJobs.push(...jobs);
+    console.log(allJobs.length);
     resultCount = jobs.length;
     currentPage += 1;
   }
-  console.log("jobs length", allJobs.length);
+  console.log(`got ${allJobs.length} in total`);
 }
 
 fetchFromGithub();
 
-module.exports = {
-  fetchFromGithub,
-};
+module.exports = fetchFromGithub;

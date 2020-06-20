@@ -10,7 +10,6 @@ const baseURL = "https://jobs.github.com/positions.json";
 
 function filterJuniorJobs(jobs) {
   const filteredJobs = jobs.filter((job) => {
-    let isJunior = true;
     const jobTitle = job.title.toLowerCase();
 
     if (
@@ -18,10 +17,9 @@ function filterJuniorJobs(jobs) {
       jobTitle.includes("manager") ||
       jobTitle.includes("architect")
     ) {
-      isJunior = false;
+      return false;
     }
-
-    return isJunior === true;
+    return true;
   });
   return filteredJobs;
 }
@@ -43,7 +41,7 @@ async function fetchFromGithub() {
   console.log(`got ${allJobs.length} in total`);
 
   const juniorJobs = filterJuniorJobs(allJobs);
-
+  console.log(`length of junior ${juniorJobs.length}`);
   const res = await setAsync("github", JSON.stringify(allJobs));
   console.log("res", res);
 }

@@ -8,6 +8,24 @@ const setAsync = promisify(client.set).bind(client);
 
 const baseURL = "https://jobs.github.com/positions.json";
 
+function filterJuniorJobs(jobs) {
+  const filteredJobs = jobs.filter((job) => {
+    let isJunior = true;
+    const jobTitle = job.title.toLowerCase();
+
+    if (
+      jobTitle.includes("senior") ||
+      jobTitle.includes("manager") ||
+      jobTitle.includes("architect")
+    ) {
+      isJunior = false;
+    }
+
+    return isJunior === true;
+  });
+  return filteredJobs;
+}
+
 async function fetchFromGithub() {
   console.log("fetching jobs");
   let resultCount = 1;
@@ -23,6 +41,9 @@ async function fetchFromGithub() {
     currentPage += 1;
   }
   console.log(`got ${allJobs.length} in total`);
+
+  const juniorJobs = filterJuniorJobs(allJobs);
+
   const res = await setAsync("github", JSON.stringify(allJobs));
   console.log("res", res);
 }

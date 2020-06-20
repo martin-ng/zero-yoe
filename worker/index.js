@@ -10,5 +10,3 @@ const jobGithub = new CronJob(
   "America/Los_Angeles"
 );
 jobGithub.start();
-
-console.log(fetchFromGithub);

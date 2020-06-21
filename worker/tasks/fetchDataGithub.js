@@ -42,7 +42,7 @@ async function fetchFromGithub() {
 
   const juniorJobs = filterJuniorJobs(allJobs);
   console.log(`length of junior ${juniorJobs.length}`);
-  const res = await setAsync("github", JSON.stringify(allJobs));
+  const res = await setAsync("github", JSON.stringify(juniorJobs));
   console.log("res", res);
 }
 

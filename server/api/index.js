@@ -10,12 +10,12 @@ const getAsync = promisify(client.get).bind(client);
 const PORT = process.env.PORT || 8000;
 
 app.get("/", (req, res) => {
-  res.send("HELLO WORLD!!");
+  res.send("Hello World!!");
 });
 
 app.get("/jobs", async (req, res) => {
   const getJobs = await getAsync("github");
-  res.header("Access-Control-Allow-Origin", "http://localhost:8000");
+  res.header("Access-Control-Allow-Origin", "http://localhost:3000");
   res.send(getJobs);
 });
 

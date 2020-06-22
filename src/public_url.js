@@ -1,5 +1,7 @@
-const githubURL = "https://jobs.github.com/positions.json";
+// const githubURL = "https://jobs.github.com/positions.json";
+const jobURL = "http://localhost:8000/jobs";
 
 module.exports = {
-  GITHUB_URL: githubURL,
+  JOB_URL: jobURL,
+  // GITHUB_URL: githubURL,
 };

@@ -15,6 +15,7 @@ app.get("/", (req, res) => {
 
 app.get("/jobs", async (req, res) => {
   const getJobs = await getAsync("github");
+  res.header("Access-Control-Allow-Origin", "http://localhost:8000");
   res.send(getJobs);
 });
 

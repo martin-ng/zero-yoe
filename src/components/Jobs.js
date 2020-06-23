@@ -33,17 +33,19 @@ export default function Jobs(props) {
   };
 
   return (
-    <div>
+    <div className="jobs-container">
       <div>
-        <h1>Entry Level Software Engineering Jobs</h1>
-      </div>
-      <div>
-        {jobsList.length ? (
-          jobsList.map((job, index) => <Job key={index} data={job} />)
-        ) : (
-          <h1>NOTHING FOR NOW!</h1>
-        )}
-        <div>
+        <div id="job-list">
+          {jobsList.length ? (
+            jobsList.map((job, index) => <Job key={index} data={job} />)
+          ) : (
+            <h1>NOTHING FOR NOW!</h1>
+          )}
+        </div>
+        <div className="step-button">
+          {/* <div> */}
+          Page {activeStep} of {numOfJobs}
+          {/* </div> */}
           <MobileStepper
             variant="progress"
             steps={Math.ceil(numOfJobs / 25)}

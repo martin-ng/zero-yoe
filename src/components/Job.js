@@ -18,12 +18,14 @@ export default function Job(prop) {
 
   return (
     <div className="job">
-      <div>
+      <div className="job-left">
         <h2>{title}</h2>
         <h2>{company}</h2>
         <h3>{location}</h3>
       </div>
-      <div>{created_at.split(" ").slice(0, 3).join(" ")}</div>
+      <div className="job-right">
+        {created_at.split(" ").slice(0, 3).join(" ")}
+      </div>
     </div>
   );
 }

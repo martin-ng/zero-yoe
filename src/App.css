@@ -1,3 +1,23 @@
+.app {
+  /* background-color: rgb(212, 224, 226); */
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  background-color: rgb(215, 220, 221);
+}
+
+#header-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#main-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .App {
   text-align: center;
 }

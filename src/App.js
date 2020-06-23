@@ -6,6 +6,8 @@ import { JOB_URL } from "./public_url";
 import { Jobs } from "./components/index";
 import fetch from "node-fetch";
 
+import { Navbar } from "./components/index";
+
 const mockData = [
   { title: "New Grad", company: "Google" },
   { title: "New Grad", company: "Facebook" },
@@ -33,6 +35,10 @@ const App = () => {
   return (
     <div className="app">
       <div>
+        <Navbar />
+      </div>
+      <div id="main-body">
+        <h1>Entry Level Software Engineering Jobs</h1>
         <Jobs jobsList={jobsList} />
       </div>
     </div>

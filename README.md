@@ -13,6 +13,6 @@ new graduates with no experience and/or bootcamp graduates.
 
 3. Express will be used on top of Node to create our RESTFUL APIs that will interface with public APIs to pull job openings.
 
-4. Redis will be used to persist our data temporarily as long-term persistent storage will not be necessary as job openings expire relatively quickly.
+4. Redis will be used to persist our data temporarily.
 
 5. Cron in our Node module will be utilized to consistently pull jobs from public APIs at an interval.

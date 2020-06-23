@@ -5,7 +5,7 @@ const app = express();
 const redis = require("redis");
 
 let client;
-if (process.env.REDISCLOUD_URL) {
+if (process.env.REDIS_URL) {
   let redisURL = url.parse(process.env.REDISCLOUD_URL);
   client = redis.createClient(redisURL);
 } else {

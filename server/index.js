@@ -1,8 +1,16 @@
+const url = require("url");
 const express = require("express");
 const app = express();
 
 const redis = require("redis");
-const client = redis.createClient();
+
+let client;
+if (process.env.REDISCLOUD_URL) {
+  let redisURL = url.parse(process.env.REDISCLOUD_URL);
+  client = redis.createClient(redisURL);
+} else {
+  client = redis.createClient();
+}
 
 const { promisify } = require("util");
 const getAsync = promisify(client.get).bind(client);

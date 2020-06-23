@@ -8,14 +8,6 @@ import fetch from "node-fetch";
 
 import { Navbar } from "./components/index";
 
-const mockData = [
-  { title: "New Grad", company: "Google" },
-  { title: "New Grad", company: "Facebook" },
-  { title: "New Grad", company: "Twitter" },
-  { title: "New Grad", company: "Chase" },
-  { title: "New Grad", company: "Capital" },
-];
-
 async function fetchJobs(setJobs) {
   console.log(`fetching from ${JOB_URL}`);
   const githubData = await fetch(JOB_URL);

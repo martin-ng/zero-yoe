@@ -43,9 +43,9 @@ export default function Jobs(props) {
           )}
         </div>
         <div className="step-button">
-          {/* <div> */}
-          Page {activeStep} of {numOfJobs}
-          {/* </div> */}
+          <div>
+            Page {activeStep} of {numOfJobs}
+          </div>
           <MobileStepper
             variant="progress"
             steps={Math.ceil(numOfJobs / 25)}

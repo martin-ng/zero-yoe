@@ -15,13 +15,12 @@ const { promisify } = require("util");
 const getAsync = promisify(client.get).bind(client);
 
 const PORT = process.env.PORT || 8000;
-module.exports = app;
 
 const bootApp = () => {
-  app.use(express.static(path.join(__dirname, "..", "public")));
+  app.use(express.static(path.join(__dirname, "../build")));
 
-  app.use("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "..", "public", "index.html"));
+  app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "build", "index.html"));
   });
 
   app.use((err, req, res, next) => {
@@ -33,7 +32,7 @@ const bootApp = () => {
 
 const startListening = () => {
   app.listen(PORT, () => {
-    console.log(`Zero Yoe's server is listening on port ${PORT}`);
+    console.log(`Zero YOE's server is listening on port ${PORT}`);
   });
 };
 

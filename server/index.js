@@ -1,4 +1,3 @@
-const url = require("url");
 const express = require("express");
 const app = express();
 
@@ -6,8 +5,7 @@ const redis = require("redis");
 
 let client;
 if (process.env.REDIS_URL) {
-  let redisURL = process.env.REDISCLOUD_URL;
-  client = redis.createClient(redisURL);
+  client = redis.createClient(process.env.REDIS_URL);
 } else {
   client = redis.createClient();
 }

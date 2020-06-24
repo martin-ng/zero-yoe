@@ -2,6 +2,7 @@ const path = require("path");
 const express = require("express");
 const app = express();
 const redis = require("redis");
+require("../worker/cron-index.js");
 
 let client;
 if (process.env.REDIS_URL) {

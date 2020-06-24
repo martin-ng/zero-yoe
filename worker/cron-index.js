@@ -4,7 +4,10 @@ const fetchFromGithub = require("./tasks/fetchDataGithub");
 
 const jobGithub = new CronJob(
   "0 * * * *",
-  fetchFromGithub,
+  () => {
+    console.log("Cron running!");
+    fetchFromGithub();
+  },
   null,
   true,
   "America/Los_Angeles"

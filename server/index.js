@@ -1,3 +1,4 @@
+const path = require("path");
 const express = require("express");
 const app = express();
 
@@ -14,10 +15,27 @@ const { promisify } = require("util");
 const getAsync = promisify(client.get).bind(client);
 
 const PORT = process.env.PORT || 8000;
+module.exports = app;
 
-app.get("/", (req, res) => {
-  res.send("Hello World!!");
-});
+const bootApp = () => {
+  app.use(express.static(path.join(__dirname, "..", "public")));
+
+  app.use("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "..", "public", "index.html"));
+  });
+
+  app.use((err, req, res, next) => {
+    console.error(err);
+    console.error(err.stack);
+    res.status(err.status || 500).send(err.message || "Internal server error.");
+  });
+};
+
+const startListening = () => {
+  app.listen(PORT, () => {
+    console.log(`Zero Yoe's server is listening on port ${PORT}`);
+  });
+};
 
 app.get("/jobs", async (req, res) => {
   const getJobs = await getAsync("github");
@@ -25,6 +43,5 @@ app.get("/jobs", async (req, res) => {
   res.send(getJobs);
 });
 
-app.listen(PORT, () => {
-  console.log(`Zero Yoe's server is listening on port ${PORT}`);
-});
+bootApp();
+startListening();

@@ -13,3 +13,5 @@ const jobGithub = new CronJob(
   "America/Los_Angeles"
 );
 jobGithub.start();
+
+module.exports.jobGithub = jobGithub;

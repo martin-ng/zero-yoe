@@ -1,7 +1,6 @@
 const path = require("path");
 const express = require("express");
 const app = express();
-
 const redis = require("redis");
 
 let client;
@@ -36,7 +35,7 @@ const startListening = () => {
   });
 };
 
-app.get("/jobs", async (req, res) => {
+app.get("/api/jobs", async (req, res) => {
   const getJobs = await getAsync("github");
   res.header("Access-Control-Allow-Origin", "http://localhost:3000");
   res.send(getJobs);

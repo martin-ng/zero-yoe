@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 
-import { JOB_URL } from "./public_url";
+import { JOB_URL, PROD_URL } from "./public_url";
 
 import { Jobs } from "./components/index";
 import fetch from "node-fetch";
@@ -9,8 +9,8 @@ import fetch from "node-fetch";
 import { Navbar } from "./components/index";
 
 async function fetchJobs(setJobs) {
-  console.log(`fetching from ${JOB_URL}`);
-  const githubData = await fetch(JOB_URL);
+  console.log(`fetching from ${PROD_URL}`);
+  const githubData = await fetch(PROD_URL);
   const githubJobs = await githubData.json();
   setJobs(githubJobs);
   console.log("github jobs", githubJobs);

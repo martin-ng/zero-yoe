@@ -20,7 +20,7 @@ Finding that first job is always challenge especially in the CS industry especia
 
 1. User will see a list of entry-level positions specifically in the US.
 
-2. The front-end querying jobs from the back-end must be not exceed 200 ms.
+2. The front-end querying jobs from the back-end must not exceed 200 ms.
 
 3. Implement a scheduler that will periodically pull jobs and store them into Redis. This will ensure the data in Redis does not become stale.
 

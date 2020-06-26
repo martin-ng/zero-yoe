@@ -3,7 +3,7 @@ const CronJob = require("cron").CronJob;
 const fetchFromGithub = require("./tasks/fetchDataGithub");
 
 const jobGithub = new CronJob(
-  "0 * * * *",
+  "* * * * *",
   () => {
     console.log("Cron running!");
     fetchFromGithub();

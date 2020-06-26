@@ -13,11 +13,11 @@ const { promisify } = require("util");
 const setAsync = promisify(client.set).bind(client);
 
 const baseURL = "https://jobs.github.com/positions.json";
+let locationURL = "united+states";
 
 function filterJuniorJobs(jobs) {
   const filteredJobs = jobs.filter((job) => {
     const jobTitle = job.title.toLowerCase();
-
     if (
       jobTitle.includes("senior") ||
       jobTitle.includes("manager") ||
@@ -30,20 +30,18 @@ function filterJuniorJobs(jobs) {
   return filteredJobs;
 }
 
+// Function below is for specific US locations
 async function fetchFromGithub() {
-  console.log("fetching jobs");
-  let resultCount = 1;
-  let currentPage = 0;
+  console.log(`fetching jobs from ${baseURL}?location=${locationURL}`);
 
   const allJobs = [];
 
-  while (resultCount > 0) {
-    const data = await fetch(`${baseURL}?page=${currentPage}`);
-    const jobs = await data.json();
-    allJobs.push(...jobs);
-    resultCount = jobs.length;
-    currentPage += 1;
-  }
+  const data = await fetch(`${baseURL}?location=${locationURL}`);
+
+  const jobs = await data.json();
+
+  allJobs.push(...jobs);
+
   console.log(`got ${allJobs.length} in total`);
 
   const juniorJobs = filterJuniorJobs(allJobs);
@@ -51,6 +49,32 @@ async function fetchFromGithub() {
   const res = await setAsync("github", JSON.stringify(juniorJobs));
   console.log("res", { res });
 }
+
+// Function below is for paginated API
+// async function fetchFromGithub() {
+//   let resultCount = 1;
+//   let currentPage = 0;
+//   console.log(`fetching jobs from ${baseURL}?page=${currentPage}`);
+
+//   const allJobs = [];
+//   console.log("result", resultCount);
+//   while (resultCount > 0) {
+//     const data = await fetch(`${baseURL}?page=${currentPage}`);
+
+//     const jobs = await data.json();
+
+//     allJobs.push(...jobs);
+
+//     resultCount = jobs.length;
+//     currentPage += 1;
+//   }
+//   console.log(`got ${allJobs.length} in total`);
+
+//   const juniorJobs = filterJuniorJobs(allJobs);
+//   console.log(`length of junior ${juniorJobs.length}`);
+//   const res = await setAsync("github", JSON.stringify(juniorJobs));
+//   console.log("res", { res });
+// }
 
 fetchFromGithub();
 

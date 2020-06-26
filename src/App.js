@@ -9,11 +9,12 @@ import fetch from "node-fetch";
 import { Navbar } from "./components/index";
 
 async function fetchJobs(setJobs) {
+  console.log(`fetching from ${JOB_URL}`);
+  const githubData = await fetch(JOB_URL);
+  const githubJobs = await githubData.json();
   // console.log(`fetching from ${PROD_URL}`);
   // const githubData = await fetch(PROD_URL);
-  console.log(`fetching from ${PROD_URL}`);
-  const githubData = await fetch(PROD_URL);
-  const githubJobs = await githubData.json();
+  // const githubJobs = await githubData.json();
   setJobs(githubJobs);
   console.log("github jobs", githubJobs);
 }

@@ -6,13 +6,13 @@ Finding that first job is always challenge especially in the CS industry, especi
 
 ## MVP
 
-1. This web application will be a single page application. React is used for it virtual DOM and ability to keep the UI in sync with state.
+1. This web application's front-end will utilize React. React uses virtual DOM to keep the UI in sync with state. This is a lot less expensive than manipulating the DOM.
 
-2. The back-end will be developed using Node and JavaScript. This will allow for quick prototype as both the front-end and back-end will be written in the same programming language.
+2. The back-end is developed with Node and Express. Using Node allows back-end development with JavaScript.
 
 3. Express will be used on top of Node to create our RESTFUL APIs that will interface with public APIs to pull job openings.
 
-4. Redis will be used to persist our data temporarily.
+4.Data does not require long-term data storage and retrieval speed is more desired. Redis, an in-memory data store is used for these reasons.
 
 5. Cron in our Node module will be utilized to consistently pull jobs from public APIs at an interval.
 

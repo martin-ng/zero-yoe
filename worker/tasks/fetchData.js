@@ -15,6 +15,10 @@ const setAsync = promisify(client.set).bind(client);
 const baseURL = "https://jobs.github.com/positions.json";
 let locationURL = "united+states";
 
+/*
+ * Algorithm to be developed below
+ */
+
 function filterJuniorJobs(jobs) {
   const filteredJobs = jobs.filter((job) => {
     const jobTitle = job.title.toLowerCase();
@@ -30,7 +34,10 @@ function filterJuniorJobs(jobs) {
   return filteredJobs;
 }
 
-// Function below is for specific US locations
+/*
+ * Function below is for the US specifically
+ */
+
 async function fetchFromGithub() {
   console.log(`fetching jobs from ${baseURL}?location=${locationURL}`);
 
@@ -47,10 +54,15 @@ async function fetchFromGithub() {
   const juniorJobs = filterJuniorJobs(allJobs);
   console.log(`length of junior ${juniorJobs.length}`);
   const res = await setAsync("github", JSON.stringify(juniorJobs));
-  console.log("res", { res });
+  console.log("res github", { res });
 }
 
-// Function below is for paginated API
+async function fetchFromLinkedin() {}
+
+/*
+ * Function below is for a paginated function
+ */
+
 // async function fetchFromGithub() {
 //   let resultCount = 1;
 //   let currentPage = 0;

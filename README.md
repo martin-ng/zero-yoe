@@ -12,7 +12,7 @@ Finding that first job is always challenge especially in the CS industry especia
 
 - Express: Node framework to develop RESTful API endpoints.
 
-- Node: Run-time environment that will run our JavaScript back-end.
+- Node: Run-time environment running our server.
 
 - Redis: Open-source in-memory data structure store to persist our data.
 
@@ -20,7 +20,7 @@ Finding that first job is always challenge especially in the CS industry especia
 
 1. User will see a list of entry-level positions specifically in the US.
 
-2. User should only see job postings that were made within 1 week.
+2. User should only see recent job postings that were made within 1 week.
 
 3. The front-end querying jobs from the back-end must not exceed 200 ms.
 
@@ -28,13 +28,13 @@ Finding that first job is always challenge especially in the CS industry especia
 
 ## Design Process
 
-1. The back-end is developed with Node. Node will allow the use of JavaScript code to run the back-end.
+1. The back-end is developed with Node. Node will allow the use of JavaScript code to build the front and back-end.
 
 2. Express will be used on top of Node to create our RESTFUL APIs that will interface with public APIs to pull job openings and store them into our database.
 
 3. Data does not require long-term persistence and retrieval speed is more desired. Redis, an in-memory data store is used for these reasons.
 
-4. Cron scheduler will be utilized to consistently pull jobs from public APIs at an interval.
+4. Cron scheduler will be used to consistently pull data from public APIs at an interval.
 
 5. This web application's front-end will utilize React. React uses the virtual DOM to keep the UI in sync with state. This is a lot less expensive than manipulating the DOM.
 
@@ -42,4 +42,6 @@ Finding that first job is always challenge especially in the CS industry especia
 
 1. Add support for additional public APIs.
 
-2. Restructure the algorithm to transform the data depending how additional public APIs structure its data.
+2. Restructure the algorithm to transform the data from multiple data sources due to varying data model.
+
+3. In the far future, implement clusters of Redis instance to ensure scalability of this web application.

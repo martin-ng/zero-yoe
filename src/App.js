@@ -8,6 +8,10 @@ import fetch from "node-fetch";
 
 import { Navbar } from "./components/index";
 
+/*
+ * Prod_url is uncommented for the production deployment.
+ */
+
 async function fetchJobs(setJobs) {
   console.log(`fetching from ${JOB_URL}`);
   const githubData = await fetch(JOB_URL);

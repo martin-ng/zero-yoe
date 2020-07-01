@@ -24,7 +24,10 @@ export default function Job(prop) {
         <h3>{location}</h3>
       </div>
       <div className="job-right">
-        {created_at.split(" ").slice(0, 3).join(" ")}
+        <div>{created_at.split(" ").slice(0, 3).join(" ")}</div>
+        <div>
+          <button>Open Job</button>
+        </div>
       </div>
     </div>
   );

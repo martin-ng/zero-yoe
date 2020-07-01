@@ -1,6 +1,6 @@
 const CronJob = require("cron").CronJob;
 
-const fetchFromGithub = require("./tasks/fetchDataGithub");
+const fetchFromGithub = require("./tasks/fetchData");
 
 const jobGithub = new CronJob(
   "* * * * *",

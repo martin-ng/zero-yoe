@@ -31,7 +31,7 @@ export default function Jobs(props) {
   const handleBack = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
-
+  console.log(jobsList);
   return (
     <div className="jobs-container">
       <div>

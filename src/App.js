@@ -20,7 +20,6 @@ async function fetchJobs(setJobs) {
   // const githubData = await fetch(PROD_URL);
   // const githubJobs = await githubData.json();
   setJobs(githubJobs);
-  console.log("github jobs", githubJobs);
 }
 
 const App = () => {

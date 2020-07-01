@@ -4,4 +4,5 @@
 
 export { default as Jobs } from "./Jobs";
 export { default as Job } from "./Job";
+export { default as Description } from "./Description";
 export { default as Navbar } from "./Navbar";

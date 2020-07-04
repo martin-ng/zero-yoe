@@ -1,4 +1,5 @@
 import React from "react";
+
 import "./components.css";
 
 export default function Job(prop) {
@@ -15,7 +16,7 @@ export default function Job(prop) {
     type,
     url,
   } = prop.data;
-
+  // console.log("MODAL", ModalCard);
   return (
     <div className="job">
       <div className="job-left">

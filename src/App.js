@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+// import { ModalCard } from "./components/index";
 import "./App.css";
 
 import { JOB_URL, PROD_URL } from "./public_url";
@@ -37,6 +38,7 @@ const App = () => {
       </div>
       <div id="main-body">
         <h1>Entry Level Software Engineering Jobs</h1>
+        {/* <ModalCard /> */}
         <Jobs jobsList={jobsList} />
       </div>
     </div>

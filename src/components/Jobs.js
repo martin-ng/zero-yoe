@@ -7,22 +7,23 @@ import KeyboardArrowLeft from "@material-ui/icons/KeyboardArrowLeft";
 import KeyboardArrowRight from "@material-ui/icons/KeyboardArrowRight";
 import "./components.css";
 
-import { Job } from "./index";
+import { Job, ModalCard } from "./index";
 
-const useStyles = makeStyles({
-  root: {
-    maxWidth: 400,
-    flexGrow: 1,
-  },
-});
+// const useStyles = makeStyles({
+//   root: {
+//     maxWidth: 400,
+//     flexGrow: 1,
+//   },
+// });
 
 export default function Jobs(props) {
   const jobsList = props.jobsList;
 
   const numOfJobs = jobsList.length;
-  const classes = useStyles();
-  const theme = useTheme();
-  const [activeStep, setActiveStep] = React.useState(0);
+  // const classes = useStyles();
+  // const theme = useTheme();
+  const [activeStep, setActiveStep] = useState(0);
+  // const [currentJob, setCurrentJob] = useState({});
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -31,6 +32,7 @@ export default function Jobs(props) {
   const handleBack = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
+
   console.log(jobsList);
   return (
     <div className="jobs-container">

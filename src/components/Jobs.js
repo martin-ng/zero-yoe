@@ -1,15 +1,7 @@
 import React, { useState, useEffect } from "react";
-
 import "./components.css";
 
-import { Job, ModalCard } from "./index";
-
-// const useStyles = makeStyles({
-//   root: {
-//     maxWidth: 400,
-//     flexGrow: 1,
-//   },
-// });
+import { Job, JobModal } from "./index";
 
 export default function Jobs(props) {
   const jobsList = props.jobsList;
@@ -24,6 +16,7 @@ export default function Jobs(props) {
             <h1>Loading Jobs!</h1>
           )}
         </div>
+        <JobModal />
       </div>
     </div>
   );

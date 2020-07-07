@@ -2,6 +2,8 @@ import React from "react";
 
 import "./components.css";
 
+import { JobModal } from "./index";
+
 export default function Job(prop) {
   const {
     company,
@@ -32,7 +34,7 @@ export default function Job(prop) {
       <div className="job-right">
         <div>{created_at.split(" ").slice(0, 3).join(" ")}</div>
         <div>
-          <button>Open Job</button>
+          <JobModal description={description} />
         </div>
       </div>
     </div>

@@ -5,4 +5,4 @@
 export { default as Jobs } from "./Jobs";
 export { default as Job } from "./Job";
 export { default as Navbar } from "./Navbar";
-export { default as ModalCard } from "./ModalCard";
+export { default as JobModal } from "./JobModal";

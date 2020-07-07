@@ -20,13 +20,23 @@ let locationURL = "united+states";
  */
 
 function filterJuniorJobs(jobs) {
+  // 604800 seconds == 1 week
+  // 604800 * 2 is for 2 weeks
+  const startTime = new Date().getTime();
+  const endTime = startTime - 604800000 * 2;
   const filteredJobs = jobs.filter((job) => {
     const jobTitle = job.title.toLowerCase();
+    const timeCreated = new Date(job.created_at).getTime();
+
     if (
       jobTitle.includes("senior") ||
       jobTitle.includes("manager") ||
       jobTitle.includes("architect")
     ) {
+      return false;
+    }
+
+    if (timeCreated < endTime) {
       return false;
     }
     return true;

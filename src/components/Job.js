@@ -18,12 +18,7 @@ export default function Job(prop) {
     type,
     url,
   } = prop.data;
-  // let newDate = new Date(created_at);
-  // let newDateTwo = newDate.getTime() - 604800000;
-  // let endDate = newDateTwo.getDate();
-  // console.log("new date", newDate);
-  // console.log("new date ms", newDateTwo);
-  // console.log("end date", endDate);
+
   return (
     <div className="job">
       <div className="job-left">

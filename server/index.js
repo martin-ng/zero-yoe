@@ -3,7 +3,7 @@ const express = require("express");
 const app = express();
 const redis = require("redis");
 const fetch = require("node-fetch");
-const secrets = require("../secrets");
+// const secrets = require("../secrets");
 require("../worker/cron-index.js");
 
 let client;
@@ -45,14 +45,14 @@ app.get("/api/jobs", async (req, res) => {
   res.send(getJobs);
 });
 
-app.post("/api/oauth/linkedin", async (req, res) => {
-  const { LINKEDIN_CLIENT, LINKEDIN_SECRET } = secrets;
-  // const accessToken = { LINKEDIN_CLIENT, LINKEDIN_SECRET };
-  // const testRequest = `https://www.linkedin.com/oauth/v2/grant_type=client_credentials&client_id=${LINKEDIN_CLIENT}&client_secret=${LINKEDIN_SECRET}`;
-  const testRequest = `https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=${LINKEDIN_CLIENT}&redirect_uri=https://zeroyoe.herokuapp.com/`;
-  const data = await fetch(testRequest);
-  const dataJson = data.json();
-});
+// app.post("/api/oauth/linkedin", async (req, res) => {
+// const { LINKEDIN_CLIENT, LINKEDIN_SECRET } = secrets;
+// const accessToken = { LINKEDIN_CLIENT, LINKEDIN_SECRET };
+// const testRequest = `https://www.linkedin.com/oauth/v2/grant_type=client_credentials&client_id=${LINKEDIN_CLIENT}&client_secret=${LINKEDIN_SECRET}`;
+//   const testRequest = `https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=${LINKEDIN_CLIENT}&redirect_uri=https://zeroyoe.herokuapp.com/`;
+//   const data = await fetch(testRequest);
+//   const dataJson = data.json();
+// });
 
 bootApp();
 startListening();

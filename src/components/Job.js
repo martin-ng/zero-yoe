@@ -19,8 +19,18 @@ export default function Job(prop) {
     url,
   } = prop.data;
 
+  const propsData = {
+    company,
+    company_logo,
+    company_url,
+  };
+
+  const clickHandler = () => {
+    console.log("YES IT CLICKED!");
+  };
+
   return (
-    <div className="job">
+    <div className="job" onClick={clickHandler}>
       <div className="job-left">
         <h2>{title}</h2>
         <h2>{company}</h2>
@@ -29,7 +39,17 @@ export default function Job(prop) {
       <div className="job-right">
         <div>{created_at.split(" ").slice(0, 3).join(" ")}</div>
         <div>
-          <JobModal description={description} />
+          <JobModal
+            jobData={{
+              company,
+              company_logo,
+              company_url,
+              description,
+              location,
+              title,
+              url,
+            }}
+          />
         </div>
       </div>
     </div>

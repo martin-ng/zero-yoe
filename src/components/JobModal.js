@@ -17,8 +17,16 @@ export default function JobModal(props) {
     setOpen(false);
   };
 
-  // const { description } = props;
-  // console.log("job props", props);
+  const {
+    company,
+    company_logo,
+    company_url,
+    description,
+    location,
+    title,
+    url,
+  } = props.jobData;
+  console.log("props", description);
 
   return (
     <div>
@@ -31,12 +39,14 @@ export default function JobModal(props) {
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
-        <DialogTitle id="alert-dialog-title">{"Testing Testing"}</DialogTitle>
+        <DialogTitle id="alert-dialog-title">{title}</DialogTitle>
+        <p>hi</p>
         <DialogContent>
-          <DialogContentText id="alert-dialog-description">
-            {/* {description} */}
-            Testing the modal component
-          </DialogContentText>
+          {description}
+          {/* <DialogContentText id="alert-dialog-description"> */}
+          {/* {description} */}
+          {/* Testing the modal component */}
+          {/* </DialogContentText> */}
         </DialogContent>
         <DialogActions>
           {/* <Button onClick={handleClose} color="primary">

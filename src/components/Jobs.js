@@ -16,7 +16,7 @@ export default function Jobs(props) {
             <h1>Loading Jobs!</h1>
           )}
         </div>
-        <JobModal />
+        {/* <JobModal /> */}
       </div>
     </div>
   );

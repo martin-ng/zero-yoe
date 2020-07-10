@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./components.css";
 
-import { Job, JobModal } from "./index";
+import { Job } from "./index";
 
 export default function Jobs(props) {
   const jobsList = props.jobsList;
@@ -16,7 +16,6 @@ export default function Jobs(props) {
             <h1>Loading Jobs!</h1>
           )}
         </div>
-        {/* <JobModal /> */}
       </div>
     </div>
   );

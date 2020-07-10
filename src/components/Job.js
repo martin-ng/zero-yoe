@@ -19,12 +19,6 @@ export default function Job(prop) {
     url,
   } = prop.data;
 
-  const propsData = {
-    company,
-    company_logo,
-    company_url,
-  };
-
   const clickHandler = () => {
     console.log("YES IT CLICKED!");
   };

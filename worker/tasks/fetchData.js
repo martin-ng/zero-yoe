@@ -26,6 +26,7 @@ function filterJuniorJobs(jobs) {
   const endTime = startTime - 604800000 * 2;
   const filteredJobs = jobs.filter((job) => {
     const jobTitle = job.title.toLowerCase();
+    const jobDescription = job.description;
     const timeCreated = new Date(job.created_at).getTime();
 
     if (
@@ -39,6 +40,22 @@ function filterJuniorJobs(jobs) {
     if (timeCreated < endTime) {
       return false;
     }
+
+    const termsToAvoid = [
+      "1+ years",
+      "1+ YEARS",
+      "2+ years",
+      "2+ YEARS",
+      "3+ years",
+      "3+ YEARS",
+    ];
+
+    for (let term of termsToAvoid) {
+      if (jobDescription.includes(term)) {
+        return false;
+      }
+    }
+
     return true;
   });
   return filteredJobs;

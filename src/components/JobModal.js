@@ -40,18 +40,11 @@ export default function JobModal(props) {
         aria-describedby="alert-dialog-description"
       >
         <DialogTitle id="alert-dialog-title">{title}</DialogTitle>
-        <p>hi</p>
+
         <DialogContent>
-          {description}
-          {/* <DialogContentText id="alert-dialog-description"> */}
-          {/* {description} */}
-          {/* Testing the modal component */}
-          {/* </DialogContentText> */}
+          <div dangerouslySetInnerHTML={{ __html: description }} />
         </DialogContent>
         <DialogActions>
-          {/* <Button onClick={handleClose} color="primary">
-            Disagree
-          </Button> */}
           <Button onClick={handleClose} color="primary" autoFocus>
             Close
           </Button>

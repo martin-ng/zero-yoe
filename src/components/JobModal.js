@@ -26,7 +26,6 @@ export default function JobModal(props) {
     title,
     url,
   } = props.jobData;
-  console.log("props", description);
 
   return (
     <div>

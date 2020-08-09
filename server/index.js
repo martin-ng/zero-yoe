@@ -2,8 +2,7 @@ const path = require("path");
 const express = require("express");
 const app = express();
 const redis = require("redis");
-const fetch = require("node-fetch");
-// const secrets = require("../secrets");
+
 require("../worker/cron-index.js");
 
 let client;
@@ -39,7 +38,6 @@ const startListening = () => {
 };
 
 app.get("/api/jobs", async (req, res) => {
-  console.log("hi");
   const getJobs = await getAsync("github");
   res.header("Access-Control-Allow-Origin", "http://localhost:3000");
   res.send(getJobs);

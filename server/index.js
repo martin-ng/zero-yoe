@@ -1,7 +1,9 @@
+require("dotenv").config();
 const path = require("path");
 const express = require("express");
 const app = express();
 const redis = require("redis");
+const mongoose = require("mongoose");
 
 require("../worker/cron-index.js");
 

@@ -84,8 +84,6 @@ async function fetchFromGithub() {
   console.log("res github", { res });
 }
 
-async function fetchFromLinkedin() {}
-
 /*
  * Function below is for a paginated function
  */

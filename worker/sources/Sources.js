@@ -2,12 +2,17 @@
 
 class Source {
   constructor(opts) {
-    this.url = opts.url;
-    this.getLatestData = opts.getLatestData;
+    this.name = opts.name;
+    this.getLatest = opts.getLatest;
   }
 
   async fetch() {
     const { name } = this;
-    const data = await this.getLatestData();
+    const data = await this.getLatest();
+    return {
+      [name]: data,
+    };
   }
 }
+
+module.exports = Source;

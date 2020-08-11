@@ -7,8 +7,7 @@ const sources = fs
   .filter((item) => item.isDirectory())
   .map(({ name }) => require(`./${name}`)(name));
 
-exports.getLatestData = async () => {
+exports.getLatest = async () => {
   const responseList = await Promise.all(sources.map((s) => s.fetch()));
-
   return Object.assign({}, ...responseList);
 };

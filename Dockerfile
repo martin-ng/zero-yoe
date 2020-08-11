@@ -1,6 +1,13 @@
-FROM node:9-slim
-WORKDIR /server/index
-COPY package.json ./server/index
+FROM node:latest
+
+RUN mkdir -p /source/app
+
+WORKDIR /source/app
+
+COPY . /source/app
+
 RUN npm install
-COPY . ./server/index
-CMD ['npm', 'start']
+
+EXPOSE 8000
+
+CMD [ "npm", "start" ]

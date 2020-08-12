@@ -3,6 +3,7 @@ const path = require("path");
 const express = require("express");
 const app = express();
 const redis = require("redis");
+const https = require("https");
 const sources = require("../worker/sources/");
 const mongoose = require("mongoose");
 
@@ -39,6 +40,27 @@ const startListening = () => {
     console.log(`Zero YOE's server is listening on port ${PORT}`);
   });
 };
+
+const accessToken = 'YOUR_ACCESS_TOKEN';
+const options = {
+  host: 'api.linkedin.com',
+  path: '/v2/me',
+  method: 'GET',
+  headers: {
+    'Authorization': `Bearer ${accessToken}`,
+    'cache-control': 'no-cache',
+    'X-Restli-Protocol-Version': '2.0.0'
+  }
+};
+
+const profileRequest = https.request(options, function(res) {
+  let data = '';
+  res.on('data', (chunk) => {
+    data += chunk;
+  });
+
+  res.on('end', () => {
+    const profileData 
 
 app.get("/api/jobs", async (req, res) => {
   const getJobs = await getAsync("github");

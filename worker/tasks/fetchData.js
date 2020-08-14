@@ -1,5 +1,13 @@
 const fetch = require("node-fetch");
 const redis = require("redis");
+const { getLatest } = require("../sources");
+
+async function grab() {
+  const items = await getLatest();
+  console.log(items);
+}
+console.log("fetch", getLatest);
+grab();
 
 let client;
 if (process.env.REDIS_URL) {

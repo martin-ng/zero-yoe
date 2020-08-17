@@ -2,7 +2,7 @@ const axios = require("axios");
 const Source = require("../Sources");
 require("dotenv").config();
 
-console.log(process.env);
+// console.log(process.env);
 
 const host = process.env.USAJOBS_HOST;
 const userAgent = process.env.USAJOBS_USER_AGENT;

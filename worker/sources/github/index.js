@@ -6,8 +6,10 @@ const locationURL = "united+states";
 
 async function getLatest() {
   const res = await axios.get(`${baseURL}?location=${locationURL}`);
-
+  console.log("git", res.data);
   return res.data;
 }
+
+getLatest();
 
 module.exports = (name) => new Source({ name, getLatest });

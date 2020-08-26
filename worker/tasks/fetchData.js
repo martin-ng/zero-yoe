@@ -15,7 +15,6 @@ const setAsync = promisify(client.set).bind(client);
 
 async function gotAllData() {
   const items = await getLatest();
-  // console.log("yes", items[0][0]);
 }
 
 gotAllData();

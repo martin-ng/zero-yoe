@@ -6,7 +6,6 @@ const redis = require("redis");
 const https = require("https");
 const sources = require("../worker/sources/");
 const db = require("./database");
-const url = "";
 require("../worker/cron-index.js");
 
 const app = express();

@@ -1,6 +1,6 @@
 const axios = require("axios");
 const Source = require("../Sources");
-const secrets = require("../secrets.js");
+// const secrets = require("../secrets.js");
 require("dotenv").config();
 
 const host = process.env.USAJOBS_HOST;
@@ -15,9 +15,7 @@ async function getLatest() {
     "Authorization-Key": authKey,
   };
   try {
-    const {
-      data,
-    } = await axios.get(
+    const { data } = await axios.get(
       `https://data.usajobs.gov/api/search?JobCategoryCode=${jobCode}`,
       { headers }
     );

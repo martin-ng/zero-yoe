@@ -2,6 +2,33 @@
 
 https://zeroyoe.herokuapp.com/
 
+Production is currently being updated
+
+## Download
+Step by step guide to download repo and start the app.
+
+Clone the project to your selected directory:
+
+> git clone https://github.com/martin-ng/zero-yoe.git
+
+Install the NPM modules
+
+> npm install
+
+Download Redis CLI and Redis Server
+
+> https://redis.io/
+
+Start up redis
+
+> redis-server.exe and redis-cli.exe
+
+Visit the following URL to use Zero-Yoe.
+
+> http://localhost:8080/
+
+1. git clone 
+
 ## Introduction
 
 Finding that first job is always challenge especially in the CS industry especially for bootcamp graduates. To assist with the job search, Zero Yoe was created to filter jobs designated for graduates with 0 YOE.
@@ -16,7 +43,6 @@ Finding that first job is always challenge especially in the CS industry especia
 
 - Redis: Optimized read speed times and reduced queries to the database.
 
-- MongoDB: Non-relational database to store data from public APIs.
 
 ## MVP Requirements
 

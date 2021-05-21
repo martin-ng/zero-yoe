@@ -5,10 +5,11 @@ const express = require("express");
 const redis = require("redis");
 const https = require("https");
 const sources = require("../worker/sources/");
-const db = require("./database");
 require("../worker/cron-index.js");
 
 const app = express();
+
+if (process.env.NODE_ENV !== "production") require("../secrets");
 
 let client;
 if (process.env.REDIS_URL) {
